@@ -13,8 +13,6 @@
 			<ul>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="new_card.php">New Flash Card</a></li>
-				<li><a href="edit_card.php">Edit Flash Card</a></li>
-				<li><a href="delete_card.php">Delete Flash Card</a></li>
 			</ul>
 		</nav>
 		<div id="content">
