@@ -21,17 +21,25 @@ nav a{
 	color: #FFFFFF;
 }
 nav a:hover{
-	background-color: #FFFFFF;
 	color: #553300;
+}
+nav li:hover{
+	background-color: #DDBB00;
 }
 nav li{
 	list-style-type: none;
 	float: left;
-	padding: .25em;
 	margin: 0;
+	padding: 0;
+}
+nav li a {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: .5em;
 }
 nav ul{
-	padding: .25em;
 	margin: 0;
 	background-color: #553300;
 	overflow: auto;
