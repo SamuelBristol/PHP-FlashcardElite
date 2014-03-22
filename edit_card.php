@@ -2,22 +2,23 @@
 <h2>Edit A Card</h2>
 <form action="updateCard.php" method="post">
 <?php require 'connect.php';
-	//Display fc_flashcard table
-	$sql_stmt = "SELECT * FROM fc_flashcard";
-	$result = $dbc->query($sql_stmt);
-	if($result){
-		while($row = $result->fetch_object()){ 
+	$fc_id = $_GET['id'];
+	$sql = "SELECT flashcard_name, flashcard_desc FROM fc_flashcard WHERE flashcard_id=?";
+	$stmt = $dbc->prepare($sql);
+	$stmt->bind_param("i", $fc_id);
+	$stmt->execute();
+	$stmt->bind_result($fc_name, $fc_desc);
+	if($row = $stmt->fetch()){
 ?>
-	<p>Title: <input type="text" name="fc_name" value="<?= $row->flashcard_name ?>" />
-	<p>Description: <textarea type="text" name="fc_desc"><?= $row->flashcard_desc ?></textarea>
-	<input type="hidden" name="fc_id" value="<?= $row->flashcard_id ?>" />
+	<h1>Sup</h1>
+	<p>Title: <input type="text" name="fc_name" value="<?= $fc_name ?>" />
+	<p>Description: <textarea type="text" name="fc_desc"><?= $fc_desc ?></textarea>
+	<input type="hidden" name="fc_id" value="<?= $fc_id ?>" />
 	<input type="submit" />
-<?php }
-		$result->free();
-	} else {
-		echo "<h3>", "You don't have any flashcards!", "</h3>";
-	}	
-		$dbc->close();
+<?php
+	}
+	$stmt->close();
+	$dbc->close();
 ?>
 </form>
 <?php require("template/footer.php"); ?>
