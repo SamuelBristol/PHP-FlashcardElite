@@ -4,16 +4,22 @@
 	//Display fc_flashcard table
 	$result = $dbc->query("SELECT * FROM fc_flashcard");
 	if($result){
-		echo "<table>";
-		while($row = $result->fetch_object()){
-			echo "<tr>", "<td>", $row->flashcard_name, "</td>";
-			echo "<td>", $row->flashcard_desc, "</td>", "</tr>";
-		}
-		echo "</table>";
-		$result->free();
+?>
+<table>
+	<tr><th>Title</th><th colspan="2">Description</th></tr>
+<?php	while($row = $result->fetch_object()){ ?>
+	<tr><td><?= $row->flashcard_name ?></td>
+		<td><?= $row->flashcard_desc ?></td>
+		<td><a href="edit_card.php?id=<?= $row->flashcard_id ?>">Edit</a></td>
+	</tr>
+<?php }
+			$result->free();
 	} else {
-		echo "<h3>", "You don't have any flashcards!", "</h3>";
+?>
+<h3>You don't have any flashcards! <a href="new_card.php"></h3>
+<?php
 	}	
 		$dbc->close();
 ?>
+</table>
 <?php require("template/footer.php"); ?>
