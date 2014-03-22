@@ -2,13 +2,18 @@ body{
 	background-color: #999999;
 	font-family: Arial, sans serif;
 }
+.accent{
+	color: #3E7233;
+}
 #banner{
-	background-color: #AACCAA;
+	background-color: #AACCCC;
 	text-align: left;
 	padding: .5em;
-	font-size: 1.25em;
+	font-size: .8em;
+	color: #FFFFFF;
 }
 #content{
+	padding: .5em;
 }
 nav a{
 	text-decoration: none;
@@ -40,9 +45,10 @@ table{
 	background-color: #669966;
 }
 #wrapper{
-	background-color: #336633;
+	background-color: #3E7233;
 	width: 80%; 
+	min-width:960px;
 	margin-left: auto;
 	margin-right: auto;
-	border: .5em solid white;
+	padding-bottom: .5em;
 }
