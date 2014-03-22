@@ -1,13 +1,13 @@
 <!--BEGIN HEADER-->
 <html>
 <head>
-	<title>Flash Card Elite Study System</title>
+	<title>flashcardELITE Study System</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 	<div id="wrapper">
 		<div id="banner">		
-			<h1>Flash Card Not-So-Elite</h1>
+			<h1>flashcard<span class="accent">ELITE</span></h1>
 		</div>
 		<nav>
 			<ul>
