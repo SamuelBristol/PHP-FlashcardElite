@@ -10,12 +10,12 @@ $p_stmt = $dbc->prepare($sql);
 $p_stmt->bind_param("ssi", $fc_name, $fc_desc, $fc_id);
 $status = $p_stmt->execute();
 if($status === false){
-	trigger_error($p_stmt->error, E_USER_ERROR);
-}else {
-	echo "Success!!!";
+	$msg = "Card did not edit successfully.";
+} else {
+	$msg = $fc_name." was editted successfully.";
 }
-printf("%d Row inserted. \n", $p_stmt->affected_rows);
 $p_stmt->close();
 $dbc->close();
-//redirect to newflashcard.php with a success message or error message
+header("Location: index.php?msg=".$msg);
+die();
 ?>
