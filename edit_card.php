@@ -10,7 +10,6 @@
 	$stmt->bind_result($fc_name, $fc_desc);
 	if($row = $stmt->fetch()){
 ?>
-	<h1>Sup</h1>
 	<p>Title: <input type="text" name="fc_name" value="<?= $fc_name ?>" />
 	<p>Description: <textarea type="text" name="fc_desc"><?= $fc_desc ?></textarea>
 	<input type="hidden" name="fc_id" value="<?= $fc_id ?>" />
