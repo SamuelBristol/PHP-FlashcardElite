@@ -5,6 +5,17 @@ body{
 .accent{
 	color: #3E7233;
 }
+label{
+	float: left;
+	display: block;
+	text-align: right;
+	width: 120px;
+	padding-right: 1em;
+}
+input, textarea{
+	display: block;
+	margin-bottom: 20px;
+}
 #banner{
 	background-color: #AACCCC;
 	text-align: left;

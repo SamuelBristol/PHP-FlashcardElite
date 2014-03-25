@@ -1,6 +1,5 @@
-<?php require("template/header.php"); ?>
-<h2>Welcome, User. Here are your flashcards.</h2>
-<?php require 'connect.php';
+<?php require("template/header.php");
+	require 'connect.php';
 	$result = $dbc->query("SELECT * FROM fc_flashcard");
 	if(isset($_GET['msg'])){
 		$msg = $_GET['msg'];
@@ -10,6 +9,7 @@
 	if($result){
 		echo $msg;
 ?>
+<h2>Welcome, User. Here are your flashcards.</h2>
 <table>
 	<tr>
 		<th>Title</th>
