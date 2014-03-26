@@ -5,6 +5,61 @@ body{
 .accent{
 	color: #3E7233;
 }
+hr, p{
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}	
+.flashcard{
+	background-color: #FFFFFF;
+	margin: 1em;
+	position: relative;
+	float: left;
+	border: 1px solid black;
+	width: 320px;
+	height: 192px;
+	overflow: hidden;
+}
+.delete{
+	background-color: #FF3333;
+	color: #FFFFFF;
+	position: absolute;
+	font-weight: bold;
+	font-family: "Arial", "sans serif";
+	text-decoration: none;
+	top: 0;
+	right: 0;
+	min-width: 1em;
+	min-height: 1em;
+	padding: 5px;
+	text-align: center;
+	float: right;
+}
+.edit{
+	background-color: #3333FF;
+	color: #FFFFFF;
+	position: absolute;
+	font-weight: bold;
+	font-family: "Arial", "sans serif";
+	text-decoration: none;
+	bottom: 0;
+	right: 0;
+	min-width: 1em;
+	min-height: 1em;
+	padding: 5px;
+	text-align: center;
+	float: right;
+}
+.edit:hover{
+	background-color: #AAAAFF;
+}
+.delete:hover{
+	background-color: #FFAAAA;
+}
+.title{
+	font-size: 1.25em;
+}
 label{
 	float: left;
 	display: block;
@@ -25,6 +80,7 @@ input, textarea{
 }
 #content{
 	padding: .5em;
+	overflow: auto;
 }
 nav a{
 	text-decoration: none;

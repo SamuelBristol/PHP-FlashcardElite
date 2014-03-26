@@ -10,18 +10,14 @@
 		echo $msg;
 ?>
 <h2>Welcome, User. Here are your flashcards.</h2>
-<table>
-	<tr>
-		<th>Title</th>
-		<th colspan="3">Description</th>
-	</tr>
 <?php	while($row = $result->fetch_object()){ ?>
-	<tr>
-		<td><?= $row->flashcard_name ?></td>
-		<td><?= $row->flashcard_desc ?></td>
-		<td><a href="edit_card.php?id=<?= $row->flashcard_id ?>">Edit</a></td>
-		<td><a href="delete_card.php?id=<?= $row->flashcard_id ?>">Delete</a></td>
-	</tr>
+	<div class="flashcard">
+		<p class="title"><?= $row->flashcard_name ?></p>
+		<a class="delete" href="delete_card.php?id=<?= $row->flashcard_id ?>">X</a>
+		<hr>
+		<p><?= $row->flashcard_desc ?></p>
+		<a class="edit" href="edit_card.php?id=<?= $row->flashcard_id ?>">Edit</a>
+	</div>
 <?php }
 			$result->free();
 	} else {
